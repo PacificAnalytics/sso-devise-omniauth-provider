@@ -191,6 +191,12 @@ Devise.setup do |config|
     config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp_omniauth'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id', :require => 'omniauth-openid'
   end
 
+  # Try to get keycloak in the game.
+  if CfiOauthProvider::Application.config.use_keycloak
+    require 'omniauth-keycloak'
+    config.omniauth :omni_auth_keycloak, :name => 'keycloak'
+  end
+
   # Google OAuth2 / OpenId Connect support
   # See config/environments/(development, production, test).rb.example.rb
 

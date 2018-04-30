@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Users::OmniauthCallbacksController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/users/omniauth_callbacks_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Devise::OmniauthCallbacksController
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-do_sign_in">#do_sign_in</a>
+    
+    <li><a href="#method-i-google">#google</a>
+    
+    <li><a href="#method-i-google_oauth2">#google_oauth2</a>
+    
+    <li><a href="#method-i-ldap">#ldap</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../OmniAuth/Strategies/LDAP.html">OmniAuth::Strategies::LDAP</a>
+  
+    <li><a href="../User.html">User</a>
+  
+    <li><a href="../User/EmailCollision.html">User::EmailCollision</a>
+  
+    <li><a href="../Users.html">Users</a>
+  
+    <li><a href="../Users/OmniauthCallbacksController.html">Users::OmniauthCallbacksController</a>
+  
+    <li><a href="../AccessGrant.html">AccessGrant</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../AuthController.html">AuthController</a>
+  
+    <li><a href="../Authentication.html">Authentication</a>
+  
+    <li><a href="../AuthenticationsController.html">AuthenticationsController</a>
+  
+    <li><a href="../Client.html">Client</a>
+  
+    <li><a href="../ConfirmationsController.html">ConfirmationsController</a>
+  
+    <li><a href="../OauthHelper.html">OauthHelper</a>
+  
+    <li><a href="../RegistrationsController.html">RegistrationsController</a>
+  
+    <li><a href="../SessionsController.html">SessionsController</a>
+  
+    <li><a href="../UsersController.html">UsersController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Users::OmniauthCallbacksController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-google" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">google</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="google-source">
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">google</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-value">:google</span>, <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;email&#39;</span>],
+                              <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;uid&#39;</span>],
+                              <span class="ruby-identifier">current_user</span>)
+    <span class="ruby-identifier">do_sign_in</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>
+    <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;failure&#39;</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:forbidden</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- google-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- google-method -->
+
+    
+      <div id="method-i-google_oauth2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">google_oauth2</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="google_oauth2-source">
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">google_oauth2</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-value">:google_oauth2</span>,
+                                <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;email&#39;</span>],
+                                <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;uid&#39;</span>],
+                                <span class="ruby-identifier">current_user</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">User</span><span class="ruby-operator">::</span><span class="ruby-constant">EmailCollision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">openid_id</span> = <span class="ruby-constant">JWT</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;extra&#39;</span>][<span class="ruby-string">&#39;id_token&#39;</span>]).<span class="ruby-identifier">payload</span>[<span class="ruby-value">:openid_id</span>]
+        <span class="ruby-comment"># Try OpenId</span>
+        <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-value">:google</span>,
+                                  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;email&#39;</span>],
+                                  <span class="ruby-identifier">openid_id</span>,
+                                  <span class="ruby-identifier">current_user</span>)
+        <span class="ruby-comment"># Create authentication record for OAuth2</span>
+        <span class="ruby-identifier">auth</span> = <span class="ruby-constant">Authentication</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">id</span>
+        <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">provider</span> = <span class="ruby-value">:google_oauth2</span>
+        <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">uid</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;uid&#39;</span>]
+        <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">save!</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">do_sign_in</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>
+    <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;failure&#39;</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:forbidden</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- google_oauth2-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- google_oauth2-method -->
+
+    
+      <div id="method-i-ldap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ldap</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ldap-source">
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ldap</span>
+  <span class="ruby-identifier">ldap_conf</span> = <span class="ruby-constant">CfiOauthProvider</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">use_ldap</span>
+  <span class="ruby-identifier">info</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">info</span>[<span class="ruby-string">&#39;email&#39;</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">info</span>[<span class="ruby-string">&#39;email&#39;</span>].<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">email</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;email&#39;</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ldap_conf</span>[<span class="ruby-string">&quot;email_domain&quot;</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ldap_conf</span>[<span class="ruby-string">&quot;email_domain&quot;</span>].<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">email</span> = <span class="ruby-identifier">info</span>[<span class="ruby-string">&#39;nickname&#39;</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;@&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ldap_conf</span>[<span class="ruby-string">&quot;email_domain&quot;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;failure&#39;</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:forbidden</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">username</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">ldap_conf</span>[<span class="ruby-string">&#39;username&#39;</span>]
+               <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;extra&#39;</span>][<span class="ruby-string">&#39;raw_info&#39;</span>][<span class="ruby-identifier">ldap_conf</span>[<span class="ruby-string">&#39;username&#39;</span>].<span class="ruby-identifier">to_sym</span>][<span class="ruby-value">0</span>]
+             <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-value">:ldap</span>,
+                              <span class="ruby-identifier">email</span>,
+                              <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;uid&#39;</span>],
+                              <span class="ruby-identifier">current_user</span>,
+                              <span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">username</span>)
+    <span class="ruby-identifier">do_sign_in</span> <span class="ruby-string">&quot;LDAP&quot;</span>
+  <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>
+    <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;failure&#39;</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:forbidden</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ldap-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ldap-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-do_sign_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">do_sign_in</span><span
+            class="method-args">(kind="Google")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="do_sign_in-source">
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_sign_in</span>(<span class="ruby-identifier">kind</span>=<span class="ruby-string">&quot;Google&quot;</span>)
+  <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">first_name</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;first_name&#39;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;name&#39;</span>]
+  <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">last_name</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>][<span class="ruby-string">&#39;info&#39;</span>][<span class="ruby-string">&#39;last_name&#39;</span>]
+  <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">current_user</span> = <span class="ruby-ivar">@user</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">persisted?</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">t</span> <span class="ruby-string">&quot;devise.omniauth_callbacks.success&quot;</span>, <span class="ruby-value">:kind</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">kind</span>
+    <span class="ruby-identifier">sign_in_and_redirect</span> <span class="ruby-ivar">@user</span>, <span class="ruby-value">:event</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:authentication</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">session</span>[<span class="ruby-string">&quot;devise.google_data&quot;</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;omniauth.auth&quot;</span>]
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_user_registration_url</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- do_sign_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- do_sign_in-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

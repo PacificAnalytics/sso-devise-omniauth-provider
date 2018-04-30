@@ -2,7 +2,7 @@ require 'jwt'
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-  skip_before_filter :verify_authenticity_token, :only => [:google, :google_oauth2]
+  skip_before_filter :verify_authenticity_token, :only => [:google, :google_oauth2, :keycloak]
 
   def google
     begin
@@ -81,6 +81,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def keycloak
+    do_sign_in "KEYCLOAK"
+  end
+  
   protected
 
   def do_sign_in(kind="Google")
