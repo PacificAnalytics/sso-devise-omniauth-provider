@@ -82,6 +82,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def keycloak
+    @user = User.authenticate(:keycloak, request.env['omniauth.auth']['info']['email'],
+                              request.env['omniauth.auth']['uid'],
+                              current_user)
     do_sign_in "KEYCLOAK"
   end
   

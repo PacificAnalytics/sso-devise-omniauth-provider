@@ -9,7 +9,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.11'
   gem 'passenger'
 end
 
@@ -29,5 +29,4 @@ gem 'omniauth'
 gem 'omniauth-openid'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-ldap'
-gem 'keycloak', '~> 2.3.2'
 gem 'omniauth_openid_connect'

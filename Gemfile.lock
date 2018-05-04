@@ -53,8 +53,6 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    domain_name (0.5.20180417)
-      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.12.2)
@@ -62,8 +60,6 @@ GEM
     ffi (1.9.18)
     hashie (3.5.6)
     hike (1.2.3)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
     httpclient (2.8.3)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
@@ -78,10 +74,6 @@ GEM
       bindata
       securecompare
     jwt (1.5.6)
-    keycloak (2.3.2)
-      json
-      jwt
-      rest-client
     libv8 (3.16.14.19)
     mail (2.5.5)
       mime-types (~> 1.16)
@@ -91,7 +83,6 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     net-ldap (0.16.1)
-    netrc (0.11.0)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
@@ -179,10 +170,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (2.0.0)
-    rest-client (2.0.2)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
     ruby-openid (2.7.0)
     rubyntlm (0.3.4)
     sass (3.5.3)
@@ -218,9 +205,6 @@ GEM
     tzinfo (0.3.53)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.5)
     validate_email (0.1.6)
       activemodel (>= 3.0)
       mail (>= 2.2.5)
@@ -241,14 +225,13 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise (= 2.2.8)
   jquery-rails
-  keycloak (~> 2.3.2)
   omniauth
   omniauth-google-oauth2
   omniauth-ldap
   omniauth-openid
   omniauth_openid_connect
   passenger
-  pg
+  pg (~> 0.11)
   rails (~> 3.2.22)
   sass-rails (~> 3.2.3)
   sqlite3

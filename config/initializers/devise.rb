@@ -191,10 +191,30 @@ Devise.setup do |config|
     config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp_omniauth'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id', :require => 'omniauth-openid'
   end
 
-  # Try to get keycloak in the game.
+  #Get keycloak in the game.
   if CfiOauthProvider::Application.config.use_keycloak
-    require 'omniauth-keycloak'
-    config.omniauth :omni_auth_keycloak, :name => 'keycloak'
+    #Brutally patch SWD to supply HTTP as default url builder
+    module SWD
+      def self.url_builder
+        @@url_builder ||= URI::HTTP
+      end
+    end
+    config.omniauth :openid_connect, {
+                      name: :keycloak,
+                      scope: [:openid, :email, :profile, :address],
+                      response_type: :code,
+                      discovery: true,
+                      client_signing_alg: :RS256,
+                      issuer: "http://localhost:8180/auth/realms/pacific-analytics",
+                      client_options: {
+                        port: 8180,
+                        scheme: "https",
+                        host: "localhost",
+                        identifier: "arvados",
+                        secret: "729200d8-b236-4650-b814-a05a7346b0be",
+                        redirect_uri: "https://localhost:3002/users/auth/keycloak/callback",
+                      },
+                    }
   end
 
   # Google OAuth2 / OpenId Connect support
