@@ -88,3 +88,14 @@ common:
   #   #password: "some_password"
   #
   use_ldap: false
+
+  # KeyCloak
+  # Use this if you want to use KeyCloak as provider.
+  # use_keycloak:  set to true to enable.
+  # keycloak_client_id: <cliend id>
+  # keycloak_client_secret: <client secret>.
+  # keycloak_issuer:  keycloak issuer endpoint typically [http://<host:port>/auth/realms/<realm>]
+  # keycloak_client_redirect_uri: <uri to that should be sent as redir uri>
+  # keycloak_client_port: Keycloak port.
+  # keycloak_client_host:  Keycloak host.
+  use_keycloak: false

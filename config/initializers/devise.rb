@@ -205,14 +205,14 @@ Devise.setup do |config|
                       response_type: :code,
                       discovery: true,
                       client_signing_alg: :RS256,
-                      issuer: "http://localhost:8180/auth/realms/pacific-analytics",
+                      issuer: CfiOauthProvider::Application.config.keycloak_issuer,
                       client_options: {
-                        port: 8180,
+                        port: CfiOauthProvider::Application.config.keycloak_client_port,
                         scheme: "https",
-                        host: "localhost",
-                        identifier: "arvados",
-                        secret: "729200d8-b236-4650-b814-a05a7346b0be",
-                        redirect_uri: "https://localhost:3002/users/auth/keycloak/callback",
+                        host: CfiOauthProvider::Application.config.keycloak_client_host,
+                        identifier: CfiOauthProvider::Application.config.keycloak_client_id,
+                        secret: CfiOauthProvider::Application.config.keycloak_client_secret,
+                        redirect_uri: CfiOauthProvider::Application.config.keycloak_client_redirect_uri,
                       },
                     }
   end
