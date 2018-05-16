@@ -99,5 +99,4 @@ common:
   # keycloak_client_port: Keycloak port.
   # keycloak_client_host:  Keycloak host.
   # keycloak_logout_uri: Keycloak logout endpoint <http://<host>:<port>/auth/realms/<realm>/protocol/openid-connect/logout>
-  # keycloak_arvados_url: Arvados base url <https://localhost:3002>
   use_keycloak: false
